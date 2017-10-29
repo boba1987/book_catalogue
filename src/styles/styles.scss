@@ -60,7 +60,7 @@ h2 {
 
   input {
     box-sizing: border-box;
-    border: solid 1px gray;
+    border: solid 1px lighten(gray, 15%);
     width: 100%;
     padding: 10px;
     border-radius: 10px;
