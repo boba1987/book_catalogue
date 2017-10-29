@@ -24,13 +24,15 @@ h2 {
 }
 
 .header {
-  padding: 20px 40px;
-  padding-top: 40px;
+  padding: 40px;
   background: #ffffff; /* Old browsers */
   background: -moz-linear-gradient(top, #ffffff 49%, #f4f4f4 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #ffffff 49%,#f4f4f4 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #ffffff 49%,#f4f4f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
+  -webkit-box-shadow: inset 0px -14px 14px -9px rgba(237,234,237,1);
+  -moz-box-shadow: inset 0px -14px 14px -9px rgba(237,234,237,1);
+  box-shadow: inset 0px -14px 14px -9px rgba(237,234,237,1);
 }
 
 .title {
@@ -41,7 +43,8 @@ h2 {
 
 .sub-title {
   font-size: 10px;
-  color: gray;
+  color: lighten(gray, 30%);
+  font-weight: bold;
 }
 
 .contentHolder {
