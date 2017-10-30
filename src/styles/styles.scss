@@ -59,10 +59,11 @@ h2 {
   position: relative;
 
   input {
+    font-size: 14px;
     box-sizing: border-box;
     border: solid 1px lighten(gray, 15%);
     width: 100%;
-    padding: 10px;
+    padding: 8px 10px;
     border-radius: 10px;
     background: #f9f9f9; /* Old browsers */
     background: -moz-linear-gradient(left, #f9f9f9 71%, #ffffff 100%); /* FF3.6-15 */
