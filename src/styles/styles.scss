@@ -54,7 +54,7 @@ h2 {
 }
 
 .SearchInput {
-  border-radius: 15px;
+  border-radius: 10px;
   border: solid 5px lighten(gray, 30%);
   position: relative;
 
@@ -64,7 +64,7 @@ h2 {
     border: solid 1px lighten(gray, 15%);
     width: 100%;
     padding: 8px 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     background: #f9f9f9; /* Old browsers */
     background: -moz-linear-gradient(left, #f9f9f9 71%, #ffffff 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left, #f9f9f9 71%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
@@ -80,10 +80,19 @@ h2 {
   top: 0;
   right: 0;
   height: 35px;
-  -webkit-border-top-right-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  -moz-border-radius-bottomright: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 15x;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.container-title {
+  padding: 10px 20px;
+  background: red;
+  margin: 10px 0;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
 }

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Header from '../components/Header';
 import SearchInput from '../components/SearchInput';
+import ContainerTitle from '../components/ContainerTitle';
 
 export const CatalogPage = () => {
   return (
@@ -11,6 +12,8 @@ export const CatalogPage = () => {
       <div className="contentHolder">
         <SearchInput
           placeholder="Search"/>
+        <ContainerTitle
+          placeholder="FEATURED"/>
       </div>
     </div>
   );
