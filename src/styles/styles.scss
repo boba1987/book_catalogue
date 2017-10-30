@@ -2,6 +2,7 @@
 $vin-blue: #5bb7db;
 $vin-green: #60b044;
 $vin-red: #ff0000;
+$border-color: lighten(gray, 40%);
 
 /* Styles */
 body {
@@ -43,7 +44,7 @@ h2 {
 
 .sub-title {
   font-size: 10px;
-  color: lighten(gray, 30%);
+  color: $border-color;
   font-weight: bold;
 }
 
@@ -55,7 +56,7 @@ h2 {
 
 .SearchInput {
   border-radius: 10px;
-  border: solid 5px lighten(gray, 30%);
+  border: solid 5px $border-color;
   position: relative;
 
   input {
@@ -91,8 +92,38 @@ h2 {
 .container-title {
   padding: 10px 20px;
   background: red;
-  margin: 10px 0;
+  margin-top: 10px;
   border-radius: 10px;
   color: white;
   font-size: 16px;
+}
+
+.books-list {
+  padding: 0;
+  margin: 0;
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-right: -10px;
+
+    div {
+      padding: 10px;
+
+      div {
+        border: solid 1px $border-color;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.search-input-holder, .container-title-holder {
+  padding: 0 8px;
 }

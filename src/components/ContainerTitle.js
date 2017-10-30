@@ -7,8 +7,10 @@ class ContainerTitle extends React.Component {
 
   render() {
     return (
-      <div className="container-title">
-        {this.props.placeholder}
+      <div className="container-title-holder">
+        <div className="container-title">
+          {this.props.placeholder}
+        </div>
       </div>
     );
   }

@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import Header from '../components/Header';
 import SearchInput from '../components/SearchInput';
 import ContainerTitle from '../components/ContainerTitle';
+import BookList from '../components/BookList';
 
 export const CatalogPage = () => {
   return (
@@ -14,6 +15,7 @@ export const CatalogPage = () => {
           placeholder="Search"/>
         <ContainerTitle
           placeholder="FEATURED"/>
+        <BookList />
       </div>
     </div>
   );

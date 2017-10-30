@@ -8,13 +8,15 @@ class SearchInput extends React.Component {
 
   render() {
     return (
-      <div className="SearchInput">
-        <form>
-          <input type="text" placeholder={this.props.placeholder}/>
-          <button className="submit-button" type="submit">
-            <Search style={{color: 'white'}}/>
-          </button>
-        </form>
+      <div className="search-input-holder">
+        <div className="SearchInput">
+          <form>
+            <input type="text" placeholder={this.props.placeholder}/>
+            <button className="submit-button" type="submit">
+              <Search style={{color: 'white'}}/>
+            </button>
+          </form>
+        </div>
       </div>
     );
   }
