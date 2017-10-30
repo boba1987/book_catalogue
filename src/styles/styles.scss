@@ -16,6 +16,7 @@ body {
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
   font-weight: 300;
+  background: #f4f4f3;
 }
 
 td {
@@ -132,6 +133,7 @@ h2 {
   }
 
   .content {
+    background: white;
     .cover-img {
       margin: 15px 0;
     }
