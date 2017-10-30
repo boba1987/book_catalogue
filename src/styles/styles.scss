@@ -2,7 +2,9 @@
 $vin-blue: #5bb7db;
 $vin-green: #60b044;
 $vin-red: #ff0000;
-$border-color: lighten(gray, 40%);
+$border-color: lighten(gray, 35%);
+$gray-prime: lighten(gray, 15%);
+$prime-red: red;
 
 /* Styles */
 body {
@@ -49,7 +51,7 @@ h2 {
 }
 
 .contentHolder {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 10px 50px;
 }
@@ -62,7 +64,7 @@ h2 {
   input {
     font-size: 14px;
     box-sizing: border-box;
-    border: solid 1px lighten(gray, 15%);
+    border: solid 1px $gray-prime;
     width: 100%;
     padding: 8px 10px;
     border-radius: 5px;
@@ -75,7 +77,7 @@ h2 {
 }
 
 .submit-button {
-  background: red;
+  background: $prime-red;
   border: none;
   position: absolute;
   top: 0;
@@ -90,8 +92,8 @@ h2 {
 }
 
 .container-title {
-  padding: 10px 20px;
-  background: red;
+  padding: 10px;
+  background: $prime-red;
   margin-top: 10px;
   border-radius: 10px;
   color: white;
@@ -105,25 +107,83 @@ h2 {
   margin: 0 auto;
   text-align: center;
 
+  p {
+    text-align: left;
+    padding: 0 10px;
+  }
+
   li {
     display: inline-block;
     vertical-align: top;
-    width: 200px;
+    width: 257px;
     padding-right: 10px;
     margin-top: 10px;
     margin-right: -10px;
 
     div {
       padding: 10px;
+      padding-bottom: 0;
 
-      div {
+      div:first-child {
         border: solid 1px $border-color;
-        border-radius: 5px;
+        border-radius: 10px;
       }
+    }
+  }
+
+  .content {
+    .cover-img {
+      margin: 15px 0;
+    }
+
+    p {
+      font-size: 12px;
+      margin: 0;
+      line-height: 1.2;
+      color: $gray-prime;
     }
   }
 }
 
 .search-input-holder, .container-title-holder {
   padding: 0 8px;
+}
+
+.cover-img {
+  width: 100px;
+}
+
+.card-title {
+  color: $prime-red !important;
+  font-weight: bold;
+}
+
+.writter {
+  span {
+    color: $prime-red;
+  }
+}
+
+.content-footer {
+  text-align: left;
+  margin-bottom: 20px;
+
+  button {
+    float: right;
+  }
+}
+
+.price {
+  font-size: 20px;
+  color: black;
+  line-height: 30px;
+}
+
+.black-btn {
+  border: none;
+  border-radius: 5px;
+  background: black;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
 }
