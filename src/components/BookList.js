@@ -31,8 +31,8 @@ class BookList extends React.Component {
                 by <span>{book.by_statement}</span>
               </p>
               <br/>
-              <p>
-                OLID: {book.identifiers.openlibrary[0]}
+              <p className="writter">
+                OLID: <span>{book.identifiers.openlibrary[0]}</span>
               </p>
               <br/>
               <p className="desc">
