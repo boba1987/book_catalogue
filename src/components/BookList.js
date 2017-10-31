@@ -2,6 +2,8 @@ import React, {PropTypes}  from 'react';
 import 'whatwg-fetch';
 import _ from 'lodash';
 
+const notFound = require('../images/page_404.png');
+
 class BookList extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -48,6 +50,11 @@ class BookList extends React.Component {
 
     return (
       <div>
+        <div className={'not-found ' + (books.length ? 'hide' : 'show')}>
+          <br/>
+          <img src={notFound}/>
+          <h1>No Results</h1>
+        </div>
         <ul className="books-list">
           {books}
         </ul>
