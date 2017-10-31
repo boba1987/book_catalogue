@@ -21,8 +21,13 @@ class SearchInput extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    let queryString = "title";
 
-    fetch('http://localhost:3000/books?title=' + this.state.value).then(response => {
+    if (this.state.checked) {
+      queryString = 'olid';
+    }
+
+    fetch('http://localhost:3000/books?'+ queryString + '=' + this.state.value).then(response => {
       return response.json();
     }).then(response => {
       this.props.getBooks(response);

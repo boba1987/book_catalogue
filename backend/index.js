@@ -34,11 +34,10 @@ server.route({
     path: '/books',
     handler: function (request, reply) {
         const books = JSON.parse(response);
-        // If book title is provider, filter by title
-        if (request.query.title) {
-          return reply(FilterUtils.Filter('title', request.query.title, books));
+        if (request.query.olid) {
+          return reply(FilterUtils.Filter(['identifiers', 'openlibrary', 0], request.query.olid, books));
         }
-
-        reply(books);
+        // If book title is provider, filter by title
+        return reply(FilterUtils.Filter(['title'], request.query.title, books));
     }
 });
