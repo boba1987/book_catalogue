@@ -31,10 +31,21 @@ server.register([inert, vision], (err) => {
 
 server.route({
     method: 'GET',
+    path: '/{param*}',
+    handler: {
+        directory: {
+            path: '../dist',
+            listing: true
+        }
+    }
+});
+
+server.route({
+    method: 'GET',
     path: '/books',
     handler: function (request, reply) {
         const books = JSON.parse(response);
-        if (request.query.olid) {
+        if (request.query.olid) { // If olid is provided, filter by it
           return reply(FilterUtils.Filter(['identifiers', 'openlibrary', 0], request.query.olid, books));
         }
         // If book title is provider, filter by title
