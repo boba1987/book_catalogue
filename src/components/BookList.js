@@ -1,5 +1,6 @@
 import React, {PropTypes}  from 'react';
 import 'whatwg-fetch';
+import _ from 'lodash';
 
 class BookList extends React.Component {
   constructor(props, context) {
@@ -10,41 +11,45 @@ class BookList extends React.Component {
     fetch('http://localhost:3000/books').then(response => {
       return response.json();
     }).then(response => {
-      console.log(response);
-      //this.props.getBooks();
+      this.props.getBooks(response);
     });
-
   }
 
   render() {
+    let books = _.values(this.props.bookList).map((book, index)=> {
+      return (
+        <li key={index}>
+          <div>
+            <div className="content">
+              <img className="cover-img" src={book.cover.large}/>
+              <p className="card-title">
+                {book.title}
+              </p>
+              <p className="writter">
+                by <span>{book.by_statement}</span>
+              </p>
+              <br/>
+              <p className="desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              </p>
+              <div className="content-footer">
+                <span className="price">
+                  $24.44
+                </span>
+                <button className="black-btn">
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      );
+    });
+
     return (
       <div>
         <ul className="books-list">
-          <li>
-            <div>
-              <div className="content">
-                <img className="cover-img" src="https://covers.openlibrary.org/b/id/6995592-L.jpg"/>
-                <p className="card-title">
-                  Title
-                </p>
-                <p className="writter">
-                  by <span>Slobodan Djordjevic</span>
-                </p>
-                <br/>
-                <p className="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                </p>
-                <div className="content-footer">
-                  <span className="price">
-                    $24.44
-                  </span>
-                  <button className="black-btn">
-                    Add to cart
-                  </button>
-                </div>
-              </div>
-            </div>
-          </li>
+          {books}
         </ul>
       </div>
     );
@@ -52,7 +57,7 @@ class BookList extends React.Component {
 }
 
 BookList.propTypes = {
-  bookList: PropTypes.array.isRequired,
+  bookList: PropTypes.object.isRequired,
   getBooks: PropTypes.func.isRequired
 };
 

@@ -28,7 +28,7 @@ export const CatalogPage = (props) => {
 
 CatalogPage.propTypes = {
   actions: PropTypes.object.isRequired,
-  bookList: PropTypes.array.isRequired,
+  bookList: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
