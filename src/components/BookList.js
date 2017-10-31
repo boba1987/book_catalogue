@@ -31,6 +31,10 @@ class BookList extends React.Component {
                 by <span>{book.by_statement}</span>
               </p>
               <br/>
+              <p>
+                OLID: {book.identifiers.openlibrary[0]}
+              </p>
+              <br/>
               <p className="desc">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
               </p>
