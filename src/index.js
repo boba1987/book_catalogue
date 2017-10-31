@@ -5,6 +5,7 @@ import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
 import { AppContainer } from 'react-hot-loader';
 import Root from './components/Root';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import configureStore from './store/configureStore';
@@ -13,6 +14,8 @@ import './styles/styles.scss'; // Yep, that's right. You can import SASS/CSS fil
 import { syncHistoryWithStore } from 'react-router-redux';
 
 const store = configureStore();
+
+injectTapEventPlugin();
 
 // Create an enhanced history that syncs navigation events with the store
 const history = syncHistoryWithStore(browserHistory, store);

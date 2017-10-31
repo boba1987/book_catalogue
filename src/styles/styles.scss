@@ -196,3 +196,17 @@ h2 {
   padding: 10px;
   font-weight: bold;
 }
+
+.show {
+  display: inline-block;
+}
+
+.hide {
+  display: none;
+}
+
+.clear {
+  position: absolute;
+  right: 40px;
+  top: -6px;
+}
