@@ -2,6 +2,7 @@ import React, {PropTypes}  from 'react';
 import Search from 'material-ui/svg-icons/action/search';
 import HighlightOff from 'material-ui/svg-icons/action/highlight-off';
 import IconButton from 'material-ui/IconButton';
+import Checkbox from 'material-ui/Checkbox';
 
 class SearchInput extends React.Component {
   constructor(props, context) {
@@ -9,7 +10,8 @@ class SearchInput extends React.Component {
 
     this.state = {
       value: '',
-      showClear: false
+      showClear: false,
+      checked: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -42,6 +44,14 @@ class SearchInput extends React.Component {
     });
   }
 
+  updateCheck() {
+    this.setState((oldState) => {
+      return {
+        checked: !oldState.checked,
+      };
+    });
+  }
+
   render() {
     return (
       <div className="search-input-holder">
@@ -60,6 +70,12 @@ class SearchInput extends React.Component {
             </button>
           </form>
         </div>
+        <Checkbox
+          label="Include OLID search"
+          checked={this.state.checked}
+          onCheck={this.updateCheck.bind(this)}
+          style={{margin: 10}}
+        />
       </div>
     );
   }
