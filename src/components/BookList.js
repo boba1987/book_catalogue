@@ -1,8 +1,19 @@
 import React, {PropTypes}  from 'react';
+import 'whatwg-fetch';
 
 class BookList extends React.Component {
   constructor(props, context) {
     super(props, context);
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/books').then(response => {
+      return response.json();
+    }).then(response => {
+      console.log(response);
+      //this.props.getBooks();
+    });
+
   }
 
   render() {
@@ -41,7 +52,8 @@ class BookList extends React.Component {
 }
 
 BookList.propTypes = {
-  bookList: PropTypes.array.isRequired
+  bookList: PropTypes.array.isRequired,
+  getBooks: PropTypes.func.isRequired
 };
 
 export default BookList;

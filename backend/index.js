@@ -13,8 +13,10 @@ const response = fs.readFileSync('./books.json', {'encoding': 'utf8'});
 const server = new hapi.Server();
 server.connection({
   host: process.env.IP || 'localhost',
-  port: process.env.PORT || 3000
+  port: process.env.PORT || 3000,
+  routes: { cors: true }
 });
+
 
 server.register([inert, vision], (err) => {
   assert(!err, err);

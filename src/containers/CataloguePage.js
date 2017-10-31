@@ -19,7 +19,8 @@ export const CatalogPage = (props) => {
         <ContainerTitle
           placeholder="FEATURED"/>
         <BookList
-          bookList={props.bookList}/>
+          bookList={props.bookList}
+          getBooks={props.actions.getBooks}/>
       </div>
     </div>
   );
