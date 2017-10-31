@@ -36,7 +36,6 @@ server.route({
         const books = JSON.parse(response);
         // If book title is provider, filter by title
         if (request.query.title) {
-
           return reply(FilterUtils.Filter('title', request.query.title, books));
         }
 

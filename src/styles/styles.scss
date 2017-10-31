@@ -111,9 +111,6 @@ h2 {
   p {
     text-align: left;
     padding: 0 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   li {
@@ -162,12 +159,18 @@ h2 {
 .card-title {
   color: $prime-red !important;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .writter {
   span {
     color: $prime-red;
   }
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .content-footer {
