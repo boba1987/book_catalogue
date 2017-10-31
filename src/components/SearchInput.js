@@ -17,7 +17,7 @@ class SearchInput extends React.Component {
     fetch('http://localhost:3000/books?title=' + this.state.value).then(response => {
       return response.json();
     }).then(response => {
-      console.log(response);
+      this.props.getBooks(response);
     });
   }
 

@@ -31,6 +31,20 @@ server.route({
     method: 'GET',
     path: '/books',
     handler: function (request, reply) {
-        reply(JSON.parse(response));
+        const books = JSON.parse(response);
+        // If book title is provider, filter by title
+        if (request.query.title) {
+          let toReturn = {};
+
+          for (let book in books) {
+            if (books[book].title.toLowerCase().indexOf(request.query.title.toLowerCase()) != -1) {
+              toReturn[book] = books[book];
+            }
+          }
+
+          return reply(toReturn);
+        }
+
+        reply(books);
     }
 });
