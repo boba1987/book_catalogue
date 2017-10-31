@@ -15,7 +15,8 @@ export const CatalogPage = (props) => {
       <Header/>
       <div className="contentHolder">
         <SearchInput
-          placeholder="Search"/>
+          placeholder="Search"
+          getBooks={props.actions.getBooks}/>
         <ContainerTitle
           placeholder="FEATURED"/>
         <BookList
