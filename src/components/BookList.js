@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes}  from 'react';
 
 class BookList extends React.Component {
   constructor(props, context) {
@@ -41,7 +41,7 @@ class BookList extends React.Component {
 }
 
 BookList.propTypes = {
-
+  bookList: PropTypes.array.isRequired
 };
 
 export default BookList;

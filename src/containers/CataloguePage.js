@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+
+import * as actions from '../actions/bookCatalogueActions';
+
 import Header from '../components/Header';
 import SearchInput from '../components/SearchInput';
 import ContainerTitle from '../components/ContainerTitle';
 import BookList from '../components/BookList';
 
-export const CatalogPage = () => {
+export const CatalogPage = (props) => {
   return (
     <div>
       <Header/>
@@ -15,25 +18,27 @@ export const CatalogPage = () => {
           placeholder="Search"/>
         <ContainerTitle
           placeholder="FEATURED"/>
-        <BookList />
+        <BookList
+          bookList={props.bookList}/>
       </div>
     </div>
   );
 };
 
 CatalogPage.propTypes = {
-
+  actions: PropTypes.object.isRequired,
+  bookList: PropTypes.array.isRequired,
 };
 
-function mapStateToProps() {
+function mapStateToProps(state) {
   return {
-
+    bookList: state.booksListReducer
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(dispatch)
+    actions: bindActionCreators(actions, dispatch)
   };
 }
 
