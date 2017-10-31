@@ -8,6 +8,8 @@ const vision = require('vision');
 
 const fs = require('fs');
 
+const FilterUtils = require('./filter');
+
 const response = fs.readFileSync('./books.json', {'encoding': 'utf8'});
 
 const server = new hapi.Server();
@@ -34,15 +36,8 @@ server.route({
         const books = JSON.parse(response);
         // If book title is provider, filter by title
         if (request.query.title) {
-          let toReturn = {};
 
-          for (let book in books) {
-            if (books[book].title.toLowerCase().indexOf(request.query.title.toLowerCase()) != -1) {
-              toReturn[book] = books[book];
-            }
-          }
-
-          return reply(toReturn);
+          return reply(FilterUtils.Filter('title', request.query.title, books));
         }
 
         reply(books);
