@@ -29,7 +29,7 @@ class SearchInput extends React.Component {
     let queryString = "title";
     let olidPattern = /^OL\d+M$/i;
 
-
+    // If include OLID in the search query is enabled and entered word matches OLID pattern, search by OLID number
     if (this.state.checked && olidPattern.test(this.state.value)) {
       queryString = 'olid';
     }
