@@ -27,8 +27,10 @@ class SearchInput extends React.Component {
     }
 
     let queryString = "title";
+    let olidPattern = /^OL\d+M$/i;
 
-    if (this.state.checked) {
+
+    if (this.state.checked && olidPattern.test(this.state.value)) {
       queryString = 'olid';
     }
 
