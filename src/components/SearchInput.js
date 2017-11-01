@@ -21,6 +21,11 @@ class SearchInput extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+
+    if (!this.state.value) {
+      return;
+    }
+
     let queryString = "title";
 
     if (this.state.checked) {
