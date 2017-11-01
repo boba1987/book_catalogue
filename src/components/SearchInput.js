@@ -34,7 +34,7 @@ class SearchInput extends React.Component {
       queryString = 'olid';
     }
 
-    fetch('http://localhost:3000/books?'+ queryString + '=' + this.state.value).then(response => {
+    fetch('http://localhost:4000/books?'+ queryString + '=' + this.state.value).then(response => {
       return response.json();
     }).then(response => {
       this.props.getBooks(response);
@@ -49,7 +49,7 @@ class SearchInput extends React.Component {
   handleClear() {
     this.setState({value: '', showClear: false});
 
-    fetch('http://localhost:3000/books').then(response => {
+    fetch('http://localhost:4000/books').then(response => {
       return response.json();
     }).then(response => {
       this.props.getBooks(response);

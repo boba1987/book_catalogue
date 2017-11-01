@@ -10,12 +10,12 @@ const fs = require('fs');
 
 const FilterUtils = require('./filter');
 
-const response = fs.readFileSync('./books.json', {'encoding': 'utf8'});
+const response = fs.readFileSync('./backend/books.json', {'encoding': 'utf8'});
 
 const server = new hapi.Server();
 server.connection({
   host: process.env.IP || 'localhost',
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 4000,
   routes: { cors: true }
 });
 
